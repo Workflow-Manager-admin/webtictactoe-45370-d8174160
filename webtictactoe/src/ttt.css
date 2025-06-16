@@ -1,0 +1,154 @@
+:root {
+  --ttt-primary: #4CAF50;
+  --ttt-secondary: #FFC107;
+  --ttt-accent: #2196F3;
+  --ttt-board-bg: #fafafc;
+  --ttt-square-bg: #fff;
+  --ttt-square-border: #e0e0e0;
+  --ttt-x-color: #388e3c;
+  --ttt-o-color: #f9a825;
+  --ttt-board-shadow: 0 4px 18px 0 rgba(76,175,80,0.07), 0 1.5px 7.8px 0 rgba(76,175,80,0.09);
+}
+
+.ttt-app {
+  background: var(--ttt-board-bg);
+  min-height: 100vh;
+  font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: #272727;
+}
+
+.ttt-header {
+  background: #fff;
+  padding: 2rem 0 1.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid #ededed;
+  box-shadow: 0 1px 6px rgba(34,197,94,0.04);
+}
+
+.ttt-logo {
+  font-size: 2.2rem;
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+.ttt-title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  margin: 0;
+  color: var(--ttt-primary);
+  letter-spacing: -0.5px;
+}
+
+.ttt-main {
+  margin: 0 auto;
+  padding: 2.5rem 1rem 2rem 1rem;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ttt-status {
+  font-size: 1.35rem;
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  color: #303030;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 0.8rem;
+  background: var(--ttt-board-bg);
+  border-radius: 16px;
+  box-shadow: var(--ttt-board-shadow);
+  margin-bottom: 2.2rem;
+  padding: 1.15rem;
+}
+
+.ttt-square {
+  width: 80px;
+  height: 80px;
+  background: var(--ttt-square-bg);
+  border: 2.5px solid var(--ttt-square-border);
+  border-radius: 14px;
+  outline: none;
+  font-size: 2.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #444;
+  transition: background 0.1s, box-shadow 0.1s;
+  box-shadow: 0 1.5px 6px 0 rgba(76,175,80,0.03);
+}
+
+.ttt-square:hover:not(.ttt-filled):not(:disabled) {
+  background: #e8f8f0;
+}
+
+.ttt-square.ttt-filled {
+  /* Slightly colored on fill */
+  background: #f6fff9;
+  cursor: default;
+}
+
+.ttt-square:nth-child(odd).ttt-filled {
+  background: #fcfff6;
+}
+
+.ttt-square:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.ttt-filled {
+  color: var(--ttt-primary);
+}
+.ttt-square:after {
+  /* Style individual X and O with brand colors */
+  content: '';
+}
+.ttt-square .x {
+  color: var(--ttt-primary);
+}
+.ttt-square .o {
+  color: var(--ttt-secondary);
+}
+
+.ttt-controls {
+  margin-bottom: 1.8rem;
+}
+
+.ttt-restart-btn {
+  border: none;
+  outline: none;
+  background: var(--ttt-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.7rem 2.2rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: 0 1px 5px 0 rgba(76,175,80,0.07);
+}
+.ttt-restart-btn:hover, .ttt-restart-btn:focus {
+  background: #349c44;
+}
+
+.ttt-footer {
+  text-align: center;
+  padding: 1rem 0 1.8rem 0;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.ttt-footer a {
+  color: var(--ttt-accent);
+  text-decoration: none;
+  margin-left: 1em;
+}
